@@ -1,13 +1,31 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import NavBar from "./NavBar";
+import Navbar from "./Navbar";
 import Home from "./Home";
 import Actors from "./Actors";
 import Directors from "./Directors";
 import Movies from "./Movies";
 
 function App() {
-  return <div>{/*{code here}*/}</div>;
+  return (
+    <div>
+      <Navbar />
+      <Switch>
+        <Route exact path="/actors">
+          <Actors />
+        </Route>
+        <Route exact path="/movies">
+          <Movies />
+        </Route>
+        <Route exact path="/directors">
+          <Directors />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
